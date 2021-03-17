@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Font Awesome -->
+		<script src="https://kit.fontawesome.com/1ec56b3b97.js" crossorigin="anonymous"></script>
+
+		<!-- Generic -->
+		<meta charset="UTF-8"/>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link
+		rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<title>Shop-Shop</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Description">
+		<!-- <link rel="icon" type="image/png" href="img/icon.png"/>  -->
+		<link rel="stylesheet" href="css/style.css"/>
+		<title>
+			{% block title %}OFM
+			{% endblock %}
+		</title>
+	</head>
+	
+	<body>
+		<nav id="navMenu">
+			<a class="navItem" href="index.php?page=accueil">Accueil</a>
+			<a class="navItem" href="about.html">À propos</a>
+			<a class="navItem" href="Installation.html">Formulaire</a>
+			<span class="navDivider" href="">[!] DevLinks [!]</span>
+			<a class="navItem" href="index.html">Index</a>
+			<a class="navItem" href="login.html">Login</a>
+			<a class="navItem" href="index.php?page=admin">Admin</a>
+			<a class="navItem" href="index.php?page=about">About</a>
+			<a class="navItem" href="index.php?page=connexion">connexion</a>
+			<a class="navItem" href="index.php?page=inscription">inscription</a>
+		</nav>
+		<section id="pageContent">
+			<header>
+				<div id="menuButton">
+					Menu
+				</div>
+				<!-- Header content -->
+			</header>
+		
+            {% block contenu %}
+		{% endblock %}
+				
+			<footer>
+				<p>Copyright © 2020 OFM | Made by <a href="about.html">The OFM Team</a>.</p>
+			</footer>
+		</section>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/navMenu.js"></script>
+		<script src="js/socket.io.js"></script>
+		<script src="js/client.js"></script>
+	</body>
+</html>
