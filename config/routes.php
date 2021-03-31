@@ -2,6 +2,7 @@
     
 function getPage(){
     
+    
     $lesPages['accueil'] = "accueilControleur";
     $lesPages['about'] = "aboutControleur";
     $lesPages['connexion'] = "connexionControleur";

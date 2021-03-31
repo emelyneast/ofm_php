@@ -1,9 +1,20 @@
+
   {% extends "base.html.twig" %}
 {% block title %} {{ parent() }}Connexion{% endblock %}
 
 {% block contenu %}  
 
-
+{% if form.valide is defined %}    
+    {% if form.valide == true %}
+        
+    {% else %}
+     
+    <h1>Echec de connexion</h2>        
+    <h1>Erreur : {{form.message}}</h2>       
+    <h1><a href="index.php?page=connexion">Retourner sur la page de connexion</a></h1>    
+    {% endif %}    
+ 
+     {% else %}  
   <form action="index.php?page=connexion" method="post" enctype="application/x-www-form-urlencoded">        
   
     <legend><h2>Connexion</h2></legend> 
@@ -16,4 +27,6 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit" name="btConnecter">Connexion</button> 
 </form>
   
+
+{% endif %}
 {% endblock %}

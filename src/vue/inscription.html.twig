@@ -4,6 +4,20 @@
 
 {% block contenu %}  
 
+{% if form.valide is defined %}    
+    {% if form.valide == true %}
+    <h1>Inscription réussie</h1> 
+    <h2>Bienvenue sur OFM: {{form.Nom}}  {{form.Prenom}}</h2>       
+    <h2>Voici votre identifiant : {{form.email}}</h2>          
+    <h2>Vous êtes administrateur du site</h2>                
+         
+    {% else %} 
+    <h2>Echec de l'inscription</h2>        
+    <h2>Erreur : {{form.message}}</h2>       
+    <h1><a href="index.php?page=inscription">Retourner sur la page d'inscription</a></h1>    
+    {% endif %}    
+ 
+     {% else %}  
 <form action="index.php?page=inscription"method="post"enctype="application/x-www-form-urlencoded">      
     <h2>Inscrivez-vous sur OFM</h2>      
     <label for="inputEmail" class="sr-only">Email:</label>      
@@ -28,7 +42,6 @@
     </br>
     <button class="btn btn-lg btn-primary btn-block" type="submit" name="btInscrire">Envoyer</button> 
 
-    <butto href="index.php?page=inscription">Retourner sur la page d'inscription</a></h1>    
-    
 </form>
+{% endif %} 
 {% endblock %}
