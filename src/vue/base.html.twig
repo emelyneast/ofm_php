@@ -35,7 +35,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="description" content="Description">
+		<meta
+		name="description" content="Description">
 		<!-- <link rel="icon" type="image/png" href="img/icon.png"/>  -->
 		<link rel="stylesheet" href="css/style.css"/>
 		<title>
@@ -43,13 +44,44 @@
 			{% endblock %}
 		</title>
 	</head>
-	
+
 	<body>
 		<nav id="navMenu">
+			
 			<a class="navItem" href="index.php?page=accueil">Accueil</a>
 			<a class="navItem" href="index.php?page=about">À propos</a>
 			<a class="navItem" href="index.php?page=admin">Admin</a>
-			<a class="navItem" href="index.php?page=connexion">connexion</a>
+			
+			{% if session.login is defined %}
+				
+					<a class="navItem" href="index.php?page=deconnexion">Se déconnecter</a>
+				
+			{% else %}
+				
+					<a class="navItem" href="index.php?page=connexion">Se connecter</a>
+				
+			{% endif %}
+			{% if session.login is defined %}
+				
+					<a class="navItem" href="#">{{session.login}}</a>
+				
+			{% endif %}
+			{% if session.login is defined %}
+				{% if session.role == 1 %}
+					<ul class="navItem dropdown">
+						<a class="navItem dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Administration
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Produit</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Type</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Utilisateur</a>
+						</div>
+					</ul>
+				{% endif %}
+			{% endif %}
 			<a class="navItem" href="index.php?page=inscription">inscription</a>
 		</nav>
 		<section id="pageContent">
@@ -60,11 +92,11 @@
 				<!-- Header content -->
 			</header>
 
-            {% block contenu %}
-		{% endblock %}
-				
+			{% block contenu %}{% endblock %}
+
 			<footer>
-				<p>Copyright © 2020 OFM | Made by <a href="index.php?page=about">The OFM Team</a>.</p>
+				<p>Copyright © 2020 OFM | Made by
+					<a href="index.php?page=about">The OFM Team</a>.</p>
 			</footer>
 		</section>
 		<script src="js/jquery.min.js"></script>

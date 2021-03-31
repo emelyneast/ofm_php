@@ -8,6 +8,7 @@ function getPage(){
     $lesPages['connexion'] = "connexionControleur";
     $lesPages['inscription'] = "inscriptionControleur";
     $lesPages['admin'] = "adminControleur";
+    $lesPages['deconnexion'] = "deconnexionControleur";
 
         if (isset($_GET['page'])){        
             $page = $_GET['page'];    

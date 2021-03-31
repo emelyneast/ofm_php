@@ -68,8 +68,12 @@ function adminControleur($twig){
    
     echo $twig->render('admin.html.twig', array());
 }
-
-
+function deconnexionControleur($twig, $db)
+{
+    session_unset();
+    session_destroy();
+    header("Location:index.php");
+}
  
 
 

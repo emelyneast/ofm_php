@@ -1,5 +1,6 @@
 <?php
     /* initialisation des fichiers TWIG */ 
+    session_start();
     require_once '../lib/vendor/autoload.php';
     require_once '../src/controlleur/_controleur.php';
     require_once '../config/routes.php';
@@ -8,6 +9,7 @@
     require_once '../src/modele/_classe.php';
     $loader = new \Twig\Loader\FilesystemLoader('../src/vue/'); 
     $twig = $twig = new \Twig\Environment($loader, []);
+    $twig->addGlobal('session', $_SESSION);
     $db = connect($config);  
     $contenu = getPage($db);
     $contenu($twig,$db); 
